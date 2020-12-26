@@ -15,8 +15,28 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: srcs/nginx:local
+        image: nginx:local
         imagePullPolicy: Never
         ports:
         - containerPort: 80
         - containerPort: 443
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  labels:
+    app: nginx
+spec:
+  selector:
+    app: nginx
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+    - name: https
+      protocol: TCP
+      port: 443
+      targetPort: 443
+  type: LoadBalancer
