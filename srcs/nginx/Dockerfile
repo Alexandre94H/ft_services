@@ -5,4 +5,4 @@ RUN openrc
 RUN touch /run/openrc/softlevel
 EXPOSE 80
 EXPOSE 443
-CMD service nginx start ; tail -f /dev/null
+CMD rc-service nginx start ; tail -f /dev/null
