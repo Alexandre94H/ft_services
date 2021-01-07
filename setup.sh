@@ -1,18 +1,19 @@
 #start kubernetes
 microk8s start
 ip=$(hostname -I | cut -d " " -f1)
-microk8s enable metallb:$ip-$ip
-microk8s enable dns dashboard
+microk8s enable metallb:$ip-$ip dns dashboard
 microk8s kubectl -n kube-system wait --for=condition=AVAILABLE deployment.apps/kubernetes-dashboard
 
 #build docker and start a deployment 
 for path in srcs/* ; do
-	folder=$(echo "$path" | cut -d "/" -f2)
+	folder=$(echo "$path" | rev | cut -d "/" -f1 | rev)
 	docker build $path -t $folder:local
 	docker save $folder > temp.tar
 	microk8s ctr image import temp.tar
 	rm -f temp.tar
-	microk8s kubectl apply -f $path/deployment.yaml
+	sed "s/<ip>/$ip/g" $path/deployment.yaml > temp.yaml
+	microk8s kubectl apply -f temp.yaml
+	rm -f temp.yaml
 done
 
 #display token and endpoint
