@@ -16,7 +16,7 @@ RUN ln -s /usr/share/webapps/wordpress/ /var/www/wordpress
 RUN rm -f /etc/nginx/conf.d/default.conf
 ADD wordpress.conf /etc/nginx/conf.d/.
 
-#run wordpress
+#install openrc
 RUN apk add openrc
 RUN openrc
 RUN touch /run/openrc/softlevel
