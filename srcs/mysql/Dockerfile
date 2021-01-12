@@ -11,8 +11,12 @@ RUN openrc
 RUN touch /run/openrc/softlevel
 
 #setup mariadb
+RUN echo "port = 3306" >> /etc/my.cnf
+RUN echo "bind-address = 0.0.0.0" >> /etc/my.cnf
+RUN echo "socket=/run/mysqld/mysqld.sock" >> /etc/my.cnf
+RUN echo "skip-networking=false" >> /etc/my.cnf
 RUN /etc/init.d/mariadb setup
-ADD init_db.sql .
+ADD init_db.sh .
 
-EXPOSE 80
-CMD /etc/init.d/mariadb start && mariadb < init_db.sql && tail -f /dev/null
+EXPOSE 3306
+CMD /etc/init.d/mariadb start && sh init_db.sh && tail -f /dev/null

@@ -36,4 +36,3 @@ spec:
   selector:
     app: wordpress
   type: LoadBalancer
-  loadBalancerIP: <ip>

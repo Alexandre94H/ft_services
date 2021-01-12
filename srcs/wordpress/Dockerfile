@@ -9,6 +9,7 @@ cd /usr/share/webapps/;\
 wget http://wordpress.org/latest.tar.gz;\
 tar -xzvf latest.tar.gz;\
 rm latest.tar.gz
+ADD wp-config.php /usr/share/webapps/wordpress/.
 
 #install nginx
 RUN apk add nginx php7-fpm php7-mysqli php7-json
@@ -22,4 +23,4 @@ RUN openrc
 RUN touch /run/openrc/softlevel
 
 EXPOSE 80
-CMD rc-service php-fpm7 start && rc-service nginx start ; tail -f /dev/null
+CMD rc-service php-fpm7 start && rc-service nginx start; tail -f /dev/null

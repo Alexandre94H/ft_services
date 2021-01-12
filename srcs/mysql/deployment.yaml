@@ -19,6 +19,13 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 3306
+        env:
+        - name: SQL_USER
+          value: username
+        - name: SQL_PASSWD
+          value: password
+        - name: SQL_DB
+          value: wordpress
 
 ---
 

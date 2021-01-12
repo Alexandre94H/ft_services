@@ -44,4 +44,3 @@ spec:
   selector:
     app: nginx
   type: LoadBalancer
-  loadBalancerIP: <ip>
