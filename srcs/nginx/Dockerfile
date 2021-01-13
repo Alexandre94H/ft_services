@@ -2,8 +2,11 @@ FROM alpine
 
 RUN apk update
 
+#install nginx
+RUN apk add nginx
+
 #install openrc
-RUN apk add openrc nginx
+RUN apk add openrc
 RUN openrc
 RUN touch /run/openrc/softlevel
 
