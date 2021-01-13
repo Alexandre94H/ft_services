@@ -1,0 +1,4 @@
+echo "FTP_USER: $FTP_USER" $FTP_PASSWD
+echo "FTP_PASSWD: $FTP_PASSWD"
+adduser -S $FTP_USER
+passwd $FTP_USER -d $FTP_PASSWD
