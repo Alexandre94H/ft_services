@@ -1,5 +1,6 @@
 FROM alpine
 
+#update apk
 RUN apk update
 
 #install ftps
