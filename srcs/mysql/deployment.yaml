@@ -25,7 +25,7 @@ spec:
         - name: SQL_PASSWD
           value: password
         - name: SQL_DB
-          value: wordpress
+          value: ft_services
 
 ---
 
