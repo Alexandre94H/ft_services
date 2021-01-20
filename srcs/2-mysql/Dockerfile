@@ -20,4 +20,4 @@ RUN /etc/init.d/mariadb setup
 ADD init_db.sh .
 
 EXPOSE 3306
-CMD /etc/init.d/mariadb start && sh init_db.sh ; tail -f /dev/null
+CMD /etc/init.d/mariadb start && sh init_db.sh; tail -f /dev/null

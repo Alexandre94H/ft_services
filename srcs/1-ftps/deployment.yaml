@@ -21,9 +21,9 @@ spec:
         - containerPort: 21
         env:
         - name: FTP_USER
-          value: username
+          value: admin
         - name: FTP_PASSWD
-          value: password
+          value: admin
 
 ---
 

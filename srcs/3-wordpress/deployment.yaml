@@ -19,6 +19,17 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 80
+        env:
+        - name: SQL_HOST
+          value: mysql-service
+        - name: SQL_USER
+          value: admin
+        - name: SQL_PASSWD
+          value: admin
+        - name: SQL_DB
+          value: wordpress
+        - name: IP
+          value: <ip>
 
 ---
 
