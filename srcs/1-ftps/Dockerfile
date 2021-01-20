@@ -7,7 +7,7 @@ RUN apk update
 RUN apk add openssl
 RUN openssl req -new -x509 -days 365 -nodes -out /etc/ssl/private/vsftpd.cert.pem -keyout /etc/ssl/private/vsftpd.key.pem -subj "/C=US/ST=Utah/L=Lehi/O=Your Company, Inc./OU=IT/CN=yourdomain.com"
 RUN chown root:root /etc/ssl/private/vsftpd.cert.*;\
-chmod 600 /etc/ssl/private/vsftpd.cert.*
+	chmod 600 /etc/ssl/private/vsftpd.cert.*
 
 #install ftps
 RUN apk add vsftpd

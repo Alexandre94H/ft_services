@@ -6,11 +6,11 @@ RUN apk update
 #generate phpmyadmin
 RUN apk add wget zip
 RUN mkdir -p /usr/share/webapps/;\
-cd /usr/share/webapps/;\
-wget $(wget https://www.phpmyadmin.net/home_page/version.txt -q -O- | tail -1);\
-unzip phpMyAdmin-*-all-languages.zip;\
-rm phpMyAdmin-*-all-languages.zip;\
-mv phpMyAdmin-*-all-languages phpmyadmin
+	cd /usr/share/webapps/;\
+	wget $(wget https://www.phpmyadmin.net/home_page/version.txt -q -O- | tail -1);\
+	unzip phpMyAdmin-*-all-languages.zip;\
+	rm phpMyAdmin-*-all-languages.zip;\
+	mv phpMyAdmin-*-all-languages phpmyadmin
 ADD config.inc.php /usr/share/webapps/phpmyadmin/.
 
 #install nginx
