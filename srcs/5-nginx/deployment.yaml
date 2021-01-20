@@ -18,9 +18,15 @@ spec:
         image: nginx:local
         imagePullPolicy: Never
         ports:
-        - containerPort: 22
         - containerPort: 80
         - containerPort: 443
+        env:
+        - name: IP
+          value: <ip>
+        - name: WPPORT
+          value: '5050'
+        - name: PMAPORT
+          value: '5000'
 
 ---
 
@@ -32,9 +38,6 @@ metadata:
     metallb.universe.tf/allow-shared-ip: shared
 spec:
   ports:
-  - name: ssh
-    port: 22
-    targetPort: 22
   - name: http
     port: 80
     targetPort: 80
