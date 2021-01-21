@@ -11,9 +11,8 @@ RUN chown root:root /etc/ssl/private/nginx.cert.*;\
 
 #install nginx
 RUN apk add nginx
-RUN mkdir -p /usr/share/webapps/
-ADD react /usr/share/webapps/react
-RUN ln -s /usr/share/webapps/react/ /var/www/react
+ADD react .
+RUN ln -s /react/ /var/www/react
 RUN rm -f /etc/nginx/conf.d/default.conf
 ADD init_conf.sh .
 
