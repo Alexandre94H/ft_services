@@ -8,7 +8,6 @@ RUN apk add wget tar mysql-client
 RUN wget http://wordpress.org/latest.tar.gz
 RUN tar -xzvf latest.tar.gz
 RUN latest.tar.gz
-RUN mkdir -p /usr/share/webapps
 ADD wp-config.php /wordpress/.
 ADD init_db.sh .
 ADD wordpress.sql .
