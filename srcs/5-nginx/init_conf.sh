@@ -22,11 +22,10 @@ server {
         index index.html;
 
         location = /wordpress {
-            return 307 http://$IP:$WPPORT;
+            return 307 http://$IP:$WPPORT/;
         }
-		
-        location ~ /phpmyadmin {
-            proxy_pass http://$IP:$PMAPORT;
-            proxy_set_header Host \$host;
+
+        location /phpmyadmin/ {
+            proxy_pass http://$IP:$PMAPORT/;
         }
 }" > /etc/nginx/conf.d/react.conf
