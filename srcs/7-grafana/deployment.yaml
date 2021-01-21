@@ -21,15 +21,13 @@ spec:
         - containerPort: 3000
         env:
         - name: INFLUX_HOST
-          value: influxdb-service 
-        - name: SQL_HOST
-          value: mysql-service
-        - name: SQL_DB
-          value: ft_services
-        - name: SQL_USER
-          value: username
-        - name: SQL_PASSWD
-          value: password
+          value: influxdb-service
+        - name: INFLUX_ORG
+          value: ft-services-organization
+        - name: INFLUX_BUCKET
+          value: ft-services-bucket
+        - name: INFLUX_TOKEN
+          value: wg6JBzbLy3RQw4WHoEzEdlerOBhO8GPoR-WMTVjiod7TnpVPaxlgvPtkimWyHGXR5vBX7Mg0qr1Nk12-ZLyFTA==
 
 ---
 
