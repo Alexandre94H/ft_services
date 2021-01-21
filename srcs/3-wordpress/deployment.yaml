@@ -23,9 +23,9 @@ spec:
         - name: SQL_HOST
           value: mysql-service
         - name: SQL_USER
-          value: admin
+          value: username
         - name: SQL_PASSWD
-          value: admin
+          value: password
         - name: SQL_DB
           value: wordpress
         - name: IP

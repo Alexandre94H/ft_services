@@ -21,9 +21,9 @@ spec:
         - containerPort: 3306
         env:
         - name: SQL_USER
-          value: admin
+          value: username
         - name: SQL_PASSWD
-          value: admin
+          value: password
 
 ---
 
