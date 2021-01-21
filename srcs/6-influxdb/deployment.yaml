@@ -19,6 +19,13 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 8086
+        env:
+        - name: INFLUX_DB
+          value: ft_services
+        - name: INFLUX_USER
+          value: username
+        - name: INFLUX_PASSWD
+          value: password
 
 ---
 
