@@ -20,12 +20,16 @@ spec:
         ports:
         - containerPort: 8086
         env:
-        - name: INFLUX_DB
-          value: ft_services
         - name: INFLUX_USER
           value: username
         - name: INFLUX_PASSWD
           value: password
+        - name: INFLUX_ORG
+          value: ft-services-organization
+        - name: INFLUX_BUCKET
+          value: ft-services-bucket
+        - name: INFLUX_TOKEN
+          value: wg6JBzbLy3RQw4WHoEzEdlerOBhO8GPoR-WMTVjiod7TnpVPaxlgvPtkimWyHGXR5vBX7Mg0qr1Nk12-ZLyFTA==
 
 ---
 
