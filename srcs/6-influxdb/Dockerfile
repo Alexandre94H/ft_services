@@ -12,9 +12,10 @@ RUN mv influxdb*_linux_amd64 influxdb
 
 #install telegraf
 RUN apk add telegraf
+ADD telegraf.conf .
 
 #add start script
 ADD start.sh .
 
 EXPOSE 8086
-CMD sh start.sh ; tail -f /dev/null
+CMD sh start.sh ; telegraf --config telegraf.conf; tail -f /dev/null
