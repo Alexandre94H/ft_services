@@ -30,6 +30,8 @@ spec:
           value: ft-services-bucket
         - name: INFLUX_TOKEN
           value: wg6JBzbLy3RQw4WHoEzEdlerOBhO8GPoR-WMTVjiod7TnpVPaxlgvPtkimWyHGXR5vBX7Mg0qr1Nk12-ZLyFTA==
+        - name: IP
+          value: <ip>
 
 ---
 
