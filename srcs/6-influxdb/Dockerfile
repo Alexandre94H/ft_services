@@ -18,4 +18,4 @@ ADD telegraf.conf .
 ADD start.sh .
 
 EXPOSE 8086
-CMD sh start.sh ; telegraf --config telegraf.conf; tail -f /dev/null
+CMD sh start.sh ; telegraf --config telegraf.conf
