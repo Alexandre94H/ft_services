@@ -16,8 +16,7 @@ RUN echo "port = 3306" >> /etc/my.cnf
 RUN echo "bind-address = 0.0.0.0" >> /etc/my.cnf
 RUN echo "socket=/run/mysqld/mysqld.sock" >> /etc/my.cnf
 RUN echo "skip-networking=false" >> /etc/my.cnf
-RUN /etc/init.d/mariadb setup
-ADD init_db.sh .
+ADD start_sql.sh .
 
 EXPOSE 3306
-CMD /etc/init.d/mariadb start && sh init_db.sh; tail -f /dev/null
+CMD sh start_sql.sh; tail -f /dev/null
