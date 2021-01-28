@@ -23,4 +23,4 @@ RUN touch /run/openrc/softlevel
 
 EXPOSE 80
 EXPOSE 443
-CMD sh init_conf.sh && rc-service nginx start ; tail -f /dev/null
+CMD sh init_conf.sh && rc-service nginx start; tail -f /dev/null
