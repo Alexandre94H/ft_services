@@ -11,9 +11,7 @@ RUN chown root:root /etc/ssl/private/vsftpd.cert.*;\
 
 #install ftps
 RUN apk add vsftpd
-ADD vsftpd_footer.conf .
-RUN cat vsftpd_footer.conf >> /etc/vsftpd/vsftpd.conf
-RUN rm -f vsftpd_footer.conf
+ADD vsftpd_footer.conf /etc/vsftpd/.
 ADD init_user.sh .
 
 #install openrc
