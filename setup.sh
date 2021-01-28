@@ -1,7 +1,7 @@
 #start kubernetes
 microk8s start
 ip=$(hostname -I | cut -d " " -f1)
-microk8s enable metallb:$ip-$ip dns dashboard
+microk8s enable metallb:$ip-$ip dns dashboard storage
 
 #build docker, start a deployment and waiting for ready
 for path in srcs/* ; do
